@@ -3,8 +3,8 @@
   "revisionNumber": 5,
   "platform": {
     "name": "Sega CD",
-    "uniqueId": "segacd",
-    "shortname": "segacd",
+    "uniqueId": "megacd",
+    "shortname": "megacd",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*(?<!bin)$",
     "scraperSourceList": [],

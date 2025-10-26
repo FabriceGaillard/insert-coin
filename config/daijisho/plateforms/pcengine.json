@@ -3,8 +3,8 @@
   "revisionNumber": 8,
   "platform": {
     "name": "PC Engine",
-    "uniqueId": "tg16",
-    "shortname": "tg16",
+    "uniqueId": "pcengine",
+    "shortname": "pcengine",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [],

@@ -3,8 +3,8 @@
   "revisionNumber": 11,
   "platform": {
     "name": "GameCube",
-    "uniqueId": "gc",
-    "shortname": "gc",
+    "uniqueId": "gamecube",
+    "shortname": "gamecube",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [],

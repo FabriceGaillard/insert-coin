@@ -3,8 +3,8 @@
   "revisionNumber": 7,
   "platform": {
     "name": "PC Engine CD",
-    "uniqueId": "tgcd",
-    "shortname": "tgcd",
+    "uniqueId": "pcenginecd",
+    "shortname": "pcenginecd",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [],
