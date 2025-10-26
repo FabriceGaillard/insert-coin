@@ -1,0 +1,32 @@
+{
+  "databaseVersion": 8,
+  "platform": {
+    "name": "gamegear",
+    "uniqueId": "gamegear",
+    "shortname": "gamegear",
+    "description": "Sega \u2013 MS/GG/MD/CD emulation",
+    "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+    "scraperSourceList": [
+      "RAW:GAMEGEAR"
+    ],
+    "boxArtAspectRatioId": 0,
+    "useCustomBoxArtAspectRatio": false,
+    "customBoxArtAspectRatio": null,
+    "screenAspectRatioId": 0,
+    "useCustomScreenAspectRatio": false,
+    "customScreenAspectRatio": null,
+    "retroAchievementsAlias": null,
+    "extra": ""
+  },
+  "playerList": [
+    {
+      "name": "genesis_plus_gx_wide via RetroArch",
+      "description": "Launches with RetroArch using genesis_plus_gx_wide core",
+      "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+      "amStartArguments": "retroarch -L /data/data/com.retroarch/cores/genesis_plus_gx_wide_libretro.so /storage/emulated/0/ROMs/gamegear/%ROM%",
+      "killPackageProcesses": false,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    }
+  ]
+}

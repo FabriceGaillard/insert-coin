@@ -1,0 +1,32 @@
+{
+  "databaseVersion": 8,
+  "platform": {
+    "name": "gameboy",
+    "uniqueId": "gameboy",
+    "shortname": "gameboy",
+    "description": "Nintendo \u2013 Game Boy / Color emulation",
+    "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+    "scraperSourceList": [
+      "RAW:GAMEBOY"
+    ],
+    "boxArtAspectRatioId": 0,
+    "useCustomBoxArtAspectRatio": false,
+    "customBoxArtAspectRatio": null,
+    "screenAspectRatioId": 0,
+    "useCustomScreenAspectRatio": false,
+    "customScreenAspectRatio": null,
+    "retroAchievementsAlias": null,
+    "extra": ""
+  },
+  "playerList": [
+    {
+      "name": "sameboy via RetroArch",
+      "description": "Launches with RetroArch using sameboy core",
+      "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+      "amStartArguments": "retroarch -L /data/data/com.retroarch/cores/sameboy_libretro.so /storage/emulated/0/ROMs/gameboy/%ROM%",
+      "killPackageProcesses": false,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    }
+  ]
+}

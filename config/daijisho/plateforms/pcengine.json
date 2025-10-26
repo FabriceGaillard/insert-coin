@@ -1,0 +1,32 @@
+{
+  "databaseVersion": 8,
+  "platform": {
+    "name": "pcengine",
+    "uniqueId": "pcengine",
+    "shortname": "pcengine",
+    "description": "NEC \u2013 PC Engine / CD emulation",
+    "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+    "scraperSourceList": [
+      "RAW:PCENGINE"
+    ],
+    "boxArtAspectRatioId": 0,
+    "useCustomBoxArtAspectRatio": false,
+    "customBoxArtAspectRatio": null,
+    "screenAspectRatioId": 0,
+    "useCustomScreenAspectRatio": false,
+    "customScreenAspectRatio": null,
+    "retroAchievementsAlias": null,
+    "extra": ""
+  },
+  "playerList": [
+    {
+      "name": "beetle_pce_fast via RetroArch",
+      "description": "Launches with RetroArch using beetle_pce_fast core",
+      "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+      "amStartArguments": "retroarch -L /data/data/com.retroarch/cores/beetle_pce_fast_libretro.so /storage/emulated/0/ROMs/pcengine/%ROM%",
+      "killPackageProcesses": false,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    }
+  ]
+}

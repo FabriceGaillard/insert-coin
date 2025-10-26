@@ -1,0 +1,32 @@
+{
+  "databaseVersion": 8,
+  "platform": {
+    "name": "model2",
+    "uniqueId": "model2",
+    "shortname": "model2",
+    "description": "Arcade (MAME) emulation",
+    "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+    "scraperSourceList": [
+      "RAW:MODEL2"
+    ],
+    "boxArtAspectRatioId": 0,
+    "useCustomBoxArtAspectRatio": false,
+    "customBoxArtAspectRatio": null,
+    "screenAspectRatioId": 0,
+    "useCustomScreenAspectRatio": false,
+    "customScreenAspectRatio": null,
+    "retroAchievementsAlias": null,
+    "extra": ""
+  },
+  "playerList": [
+    {
+      "name": "mame via RetroArch",
+      "description": "Launches with RetroArch using mame core",
+      "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+      "amStartArguments": "retroarch -L /data/data/com.retroarch/cores/mame_libretro.so /storage/emulated/0/ROMs/model2/%ROM%",
+      "killPackageProcesses": false,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    }
+  ]
+}
