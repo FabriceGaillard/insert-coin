@@ -1,11 +1,11 @@
 {
   "databaseVersion": 8,
   "platform": {
-    "name": "model2",
+    "name": "SEGA Model 2",
     "uniqueId": "model2",
     "shortname": "model2",
-    "description": "Arcade (MAME) emulation",
-    "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+    "description": "SEGA Model 2 Arcade System",
+    "acceptedFilenameRegex": "^.*(\\.chd|\\.bin|\\.iso)$",
     "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
@@ -18,10 +18,10 @@
   },
   "playerList": [
     {
-      "name": "mame via RetroArch",
-      "description": "Launches with RetroArch using mame core",
-      "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-      "amStartArguments": "retroarch -L /data/data/com.retroarch/cores/mame_libretro.so /storage/emulated/0/ROMs/model2/%ROM%",
+      "name": "MAME via RetroArch",
+      "description": "Launches with RetroArch using MAME core",
+      "acceptedFilenameRegex": "^.*(\\.chd|\\.bin|\\.iso)$",
+      "amStartArguments": "retroarch -L /data/data/com.retroarch/cores/mame_libretro.so %ROM%",
       "killPackageProcesses": false,
       "killPackageProcessesWarning": true,
       "extra": ""

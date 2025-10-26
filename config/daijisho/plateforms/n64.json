@@ -1,28 +1,150 @@
 {
-  "databaseVersion": 8,
+  "databaseVersion": 14,
+  "revisionNumber": 12,
   "platform": {
-    "name": "n64",
+    "name": "Nintendo 64",
     "uniqueId": "n64",
     "shortname": "n64",
-    "description": "Nintendo- Nintendo 64 emulation",
-    "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
+    "description": null,
+    "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [],
-    "boxArtAspectRatioId": 0,
+    "boxArtAspectRatioId": 1,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,
-    "screenAspectRatioId": 0,
+    "screenAspectRatioId": 1,
     "useCustomScreenAspectRatio": false,
     "customScreenAspectRatio": null,
-    "retroAchievementsAlias": null,
+    "retroAchievementsConsoleIdList": [2],
     "extra": ""
   },
   "playerList": [
     {
-      "name": "mupen64plus_next_gle2 via RetroArch",
-      "description": "Launches with RetroArch using mupen64plus_next_gle2 core",
-      "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-      "amStartArguments": "retroarch -L /data/data/com.retroarch/cores/mupen64plus_next_gle2_libretro.so /storage/emulated/0/ROMs/n64/%ROM%",
+      "name": "n64 - org.mupen64plusae.v3.fzurita",
+      "uniqueId": "n64.org.mupen64plusae.v3.fzurita",
+      "description": "Supported extensions: bin, n64, ndd, u1, v64, z64.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|ndd|u1|v64|z64)$",
+      "amStartArguments": "-n org.mupen64plusae.v3.fzurita/paulscode.android.mupen64plusae.SplashActivity\n  -a android.intent.action.VIEW\n  -d {file.uri}",
       "killPackageProcesses": false,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - org.mupen64plusae.v3.alpha",
+      "uniqueId": "n64.org.mupen64plusae.v3.alpha",
+      "description": "Supported extensions: bin, n64, ndd, u1, v64, z64, zip, 7z.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|ndd|u1|v64|z64|zip|7z)$",
+      "amStartArguments": "-n org.mupen64plusae.v3.alpha/paulscode.android.mupen64plusae.SplashActivity\n  -a android.intent.action.VIEW\n  -d {file.uri}",
+      "killPackageProcesses": false,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - org.mupen64plusae.v3.fzurita.pro",
+      "uniqueId": "n64.org.mupen64plusae.v3.fzurita.pro",
+      "description": "Supported extensions: bin, n64, ndd, u1, v64, z64, zip, 7z.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|ndd|u1|v64|z64|zip|7z)$",
+      "amStartArguments": "-n org.mupen64plusae.v3.fzurita.pro/paulscode.android.mupen64plusae.SplashActivity\n  -a android.intent.action.VIEW\n  -d {file.uri}",
+      "killPackageProcesses": false,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - paulscode.android.mupen64plusae",
+      "uniqueId": "n64.paulscode.android.mupen64plusae",
+      "description": "Supported extensions: bin, n64, ndd, u1, v64, z64.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|ndd|u1|v64|z64)$",
+      "amStartArguments": "-n paulscode.android.mupen64plusae/.MainActivity\n  -a android.intent.action.VIEW\n  -d {file.path}",
+      "killPackageProcesses": false,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch 64 - mupen64plus_next_gles3",
+      "uniqueId": "n64.ra64.mupen64plus_next_gles3",
+      "description": "Supported extensions: bin, n64, u1, v64, z64, zip, 7z.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|u1|v64|z64|zip|7z)$",
+      "amStartArguments": "-n com.retroarch.aarch64/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch.aarch64/cores/mupen64plus_next_gles3_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.aarch64/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch.aarch64\n  -e APK /data/app/com.retroarch.aarch64-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch.aarch64/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch 64 - mupen64plus_next_gles2",
+      "uniqueId": "n64.ra64.mupen64plus_next_gles2",
+      "description": "Supported extensions: bin, n64, u1, v64, z64, zip, 7z.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|u1|v64|z64|zip|7z)$",
+      "amStartArguments": "-n com.retroarch.aarch64/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch.aarch64/cores/mupen64plus_next_gles2_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.aarch64/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch.aarch64\n  -e APK /data/app/com.retroarch.aarch64-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch.aarch64/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch 64 - parallel_n64",
+      "uniqueId": "n64.ra64.parallel_n64",
+      "description": "Supported extensions: bin, n64, ndd, u1, v64, z64.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|ndd|u1|v64|z64)$",
+      "amStartArguments": "-n com.retroarch.aarch64/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch.aarch64/cores/parallel_n64_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.aarch64/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch.aarch64\n  -e APK /data/app/com.retroarch.aarch64-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch.aarch64/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch 32 - mupen64plus_next_gles3",
+      "uniqueId": "n64.ra32.mupen64plus_next_gles3",
+      "description": "Supported extensions: bin, n64, u1, v64, z64, zip, 7z.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|u1|v64|z64|zip|7z)$",
+      "amStartArguments": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch.ra32/cores/mupen64plus_next_gles3_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch.ra32\n  -e APK /data/app/com.retroarch.ra32-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch.ra32/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch 32 - mupen64plus_next_gles2",
+      "uniqueId": "n64.ra32.mupen64plus_next_gles2",
+      "description": "Supported extensions: bin, n64, u1, v64, z64, zip, 7z.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|u1|v64|z64|zip|7z)$",
+      "amStartArguments": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch.ra32/cores/mupen64plus_next_gles2_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch.ra32\n  -e APK /data/app/com.retroarch.ra32-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch.ra32/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch 32 - parallel_n64",
+      "uniqueId": "n64.ra32.parallel_n64",
+      "description": "Supported extensions: bin, n64, ndd, u1, v64, z64.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|ndd|u1|v64|z64)$",
+      "amStartArguments": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch.ra32/cores/parallel_n64_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch.ra32\n  -e APK /data/app/com.retroarch.ra32-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch.ra32/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch - mupen64plus_next_gles3",
+      "uniqueId": "n64.ra.mupen64plus_next_gles3",
+      "description": "Supported extensions: bin, n64, u1, v64, z64, zip, 7z.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|u1|v64|z64|zip|7z)$",
+      "amStartArguments": "-n com.retroarch/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch/cores/mupen64plus_next_gles3_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch\n  -e APK /data/app/com.retroarch-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch - mupen64plus_next_gles2",
+      "uniqueId": "n64.ra.mupen64plus_next_gles2",
+      "description": "Supported extensions: bin, n64, u1, v64, z64, zip, 7z.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|u1|v64|z64|zip|7z)$",
+      "amStartArguments": "-n com.retroarch/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch/cores/mupen64plus_next_gles2_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch\n  -e APK /data/app/com.retroarch-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
+      "killPackageProcessesWarning": true,
+      "extra": ""
+    },
+    {
+      "name": "n64 - RetroArch - parallel_n64",
+      "uniqueId": "n64.ra.parallel_n64",
+      "description": "Supported extensions: bin, n64, ndd, u1, v64, z64.",
+      "acceptedFilenameRegex": "^(.*)\\.(?:bin|n64|ndd|u1|v64|z64)$",
+      "amStartArguments": "-n com.retroarch/com.retroarch.browser.retroactivity.RetroActivityFuture\n  -e ROM {file.path}\n  -e LIBRETRO /data/data/com.retroarch/cores/parallel_n64_libretro_android.so\n  -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch/files/retroarch.cfg\n  -e IME com.android.inputmethod.latin/.LatinIME\n  -e DATADIR /data/data/com.retroarch\n  -e APK /data/app/com.retroarch-1/base.apk\n  -e SDCARD /storage/emulated/0\n  -e EXTERNAL /storage/emulated/0/Android/data/com.retroarch/files\n  --activity-clear-task\n  --activity-clear-top",
+      "killPackageProcesses": true,
       "killPackageProcessesWarning": true,
       "extra": ""
     }
