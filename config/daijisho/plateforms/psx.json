@@ -4,11 +4,9 @@
     "name": "psx",
     "uniqueId": "psx",
     "shortname": "psx",
-    "description": "Sony \u2013 PlayStation emulation",
+    "description": "Sony PlayStation emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:PSX"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

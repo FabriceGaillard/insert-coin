@@ -4,11 +4,9 @@
     "name": "saturn",
     "uniqueId": "saturn",
     "shortname": "saturn",
-    "description": "Sega \u2013 Saturn emulation",
+    "description": "Sega Saturn emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:SATURN"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

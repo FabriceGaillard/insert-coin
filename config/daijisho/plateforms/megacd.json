@@ -4,11 +4,9 @@
     "name": "megacd",
     "uniqueId": "megacd",
     "shortname": "megacd",
-    "description": "Sega \u2013 MS/GG/MD/CD emulation",
+    "description": "Sega MS/GG/MD/CD emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:MEGACD"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

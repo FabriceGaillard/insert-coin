@@ -6,9 +6,7 @@
     "shortname": "dos",
     "description": "DOS (DosBox-Pure) emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:DOS"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

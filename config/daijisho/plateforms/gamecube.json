@@ -4,11 +4,9 @@
     "name": "gamecube",
     "uniqueId": "gamecube",
     "shortname": "gamecube",
-    "description": "Nintendo \u2013 GameCube / Wii emulation",
+    "description": "Nintendo GameCube / Wii emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:GAMECUBE"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

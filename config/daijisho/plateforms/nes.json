@@ -4,11 +4,9 @@
     "name": "nes",
     "uniqueId": "nes",
     "shortname": "nes",
-    "description": "Nintendo \u2013 NES / Famicom emulation",
+    "description": "Nintendo NES / Famicom emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:NES"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

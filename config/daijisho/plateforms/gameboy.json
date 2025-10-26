@@ -4,11 +4,9 @@
     "name": "gameboy",
     "uniqueId": "gameboy",
     "shortname": "gameboy",
-    "description": "Nintendo \u2013 Game Boy / Color emulation",
+    "description": "Nintendo Game Boy / Color emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:GAMEBOY"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

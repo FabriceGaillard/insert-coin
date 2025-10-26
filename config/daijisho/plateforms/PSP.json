@@ -4,11 +4,9 @@
     "name": "PSP",
     "uniqueId": "PSP",
     "shortname": "PSP",
-    "description": "Sony \u2013 PSP emulation",
+    "description": "Sony PSP emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:PSP"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

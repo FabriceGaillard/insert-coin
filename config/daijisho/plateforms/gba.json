@@ -4,11 +4,9 @@
     "name": "gba",
     "uniqueId": "gba",
     "shortname": "gba",
-    "description": "Nintendo \u2013 Game Boy advance emulation",
+    "description": "Nintendo Game Boy advance emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:GBA"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

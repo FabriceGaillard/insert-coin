@@ -4,11 +4,9 @@
     "name": "32x",
     "uniqueId": "32x",
     "shortname": "32x",
-    "description": "Sega \u2013 MS/GG/MD/CD/32X emulation",
+    "description": "Sega MS/GG/MD/CD/32X emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:32X"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

@@ -4,11 +4,9 @@
     "name": "SNES",
     "uniqueId": "SNES",
     "shortname": "SNES",
-    "description": "Nintendo \u2013 SNES / SFC emulation",
+    "description": "Nintendo SNES / SFC emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:SNES"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

@@ -4,11 +4,9 @@
     "name": "Wii",
     "uniqueId": "Wii",
     "shortname": "Wii",
-    "description": "Nintendo \u2013 Wii emulation",
+    "description": "Nintendo Wii emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:WII"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

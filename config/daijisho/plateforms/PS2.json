@@ -4,11 +4,9 @@
     "name": "PS2",
     "uniqueId": "PS2",
     "shortname": "PS2",
-    "description": "Sony \u2013 PlayStation 2 emulation",
+    "description": "Sony PlayStation 2 emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:PS2"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

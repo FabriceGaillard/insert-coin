@@ -4,11 +4,9 @@
     "name": "pcenginecd",
     "uniqueId": "pcenginecd",
     "shortname": "pcenginecd",
-    "description": "NEC \u2013 PC Engine / CD emulation",
+    "description": "NEC PC Engine / CD emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:PCENGINECD"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

@@ -4,11 +4,9 @@
     "name": "neogeocd",
     "uniqueId": "neogeocd",
     "shortname": "neogeocd",
-    "description": "SNK \u2013 Neo Geo CD emulation",
+    "description": "SNK Neo Geo CD emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:NEOGEOCD"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

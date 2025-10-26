@@ -4,11 +4,9 @@
     "name": "naomi",
     "uniqueId": "naomi",
     "shortname": "naomi",
-    "description": "Sega \u2013 Deamcast / Naomi emulation",
+    "description": "Sega Deamcast / Naomi emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:NAOMI"
-    ],
+    "scraperSourceList": [],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,

@@ -4,11 +4,9 @@
     "name": "3do",
     "uniqueId": "3do",
     "shortname": "3do",
-    "description": "The 3DO Company \u2013 3DO emulation",
+    "description": "The 3DO Company 3DO emulation",
     "acceptedFilenameRegex": "^.*\\.(bin|iso|nes|zip|gba|gb|gbc|cue|chd)$",
-    "scraperSourceList": [
-      "RAW:3DO"
-    ],
+    "scraperSourceList": ["RAW:3DO"],
     "boxArtAspectRatioId": 0,
     "useCustomBoxArtAspectRatio": false,
     "customBoxArtAspectRatio": null,
