@@ -4,7 +4,7 @@
   "platform": {
     "name": "Sega Saturn",
     "uniqueId": "saturn",
-    "shortname": "saturn",
+    "shortname": "94 saturn",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*(?<!bin)$",
     "scraperSourceList": [

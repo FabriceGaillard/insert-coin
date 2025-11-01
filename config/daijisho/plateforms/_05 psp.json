@@ -4,7 +4,7 @@
   "platform": {
     "name": "PlayStation Portable",
     "uniqueId": "psp",
-    "shortname": "psp",
+    "shortname": "_05 psp",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [

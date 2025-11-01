@@ -4,7 +4,7 @@
   "platform": {
     "name": "Neo Geo CD",
     "uniqueId": "neogeocd",
-    "shortname": "neogeocd",
+    "shortname": "94 neogeocd",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [

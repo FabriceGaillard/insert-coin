@@ -16,142 +16,135 @@
       "revisionNumber": 8
     },
     {
-      "filename": "dos.json",
-      "platformName": "DOS",
-      "platformShortname": "dos",
-      "platformUniqueId": "dos",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "pcengine.json",
+      "filename": "89 tg16.json",
       "platformName": "PC Engine",
-      "platformShortname": "pcengine",
+      "platformShortname": "89 tg16",
       "platformUniqueId": "pcengine",
       "revisionNumber": 8
     },
     {
-      "filename": "pcenginecd.json",
+      "filename": "89 tgcd.json",
       "platformName": "PC Engine CD",
-      "platformShortname": "pcenginecd",
+      "platformShortname": "89 tgcd",
       "platformUniqueId": "pcenginecd",
       "revisionNumber": 8
     },
     {
-      "filename": "gameboy.json",
+      "filename": "89 gb.json",
       "platformName": "Game Boy",
-      "platformShortname": "gameboy",
+      "platformShortname": "89 gb",
       "platformUniqueId": "gameboy",
       "revisionNumber": 8
     },
     {
-      "filename": "gbc.json",
+      "filename": "98 gbc.json",
       "platformName": "Game Boy Color",
-      "platformShortname": "gbc",
+      "platformShortname": "98 gbc",
       "platformUniqueId": "gbc",
       "revisionNumber": 8
     },
     {
-      "filename": "gba.json",
+      "filename": "_01 gba.json",
       "platformName": "Game Boy Advance",
-      "platformShortname": "gba",
+      "platformShortname": "_01 gba",
       "platformUniqueId": "gba",
       "revisionNumber": 8
     },
     {
-      "filename": "gamecube.json",
+      "filename": "_01 gc.json",
       "platformName": "GameCube",
-      "platformShortname": "gamecube",
+      "platformShortname": "_01 gc",
       "platformUniqueId": "gamecube",
       "revisionNumber": 8
     },
     {
-      "filename": "nes.json",
+      "filename": "85 nes.json",
       "platformName": "Nintendo",
-      "platformShortname": "nes",
+      "platformShortname": "85 nes",
       "platformUniqueId": "nes",
       "revisionNumber": 8
     },
     {
-      "filename": "n64.json",
+      "filename": "96 n64.json",
       "platformName": "Nintendo 64",
-      "platformShortname": "n64",
+      "platformShortname": "96 n64",
       "platformUniqueId": "n64",
       "revisionNumber": 8
     },
     {
-      "filename": "SNES.json",
+      "filename": "90 snes.json",
       "platformName": "Super Nintendo",
-      "platformShortname": "SNES",
+      "platformShortname": "90 snes",
       "platformUniqueId": "SNES",
       "revisionNumber": 8
     },
     {
-      "filename": "atomiswave.json",
+      "filename": "_03 atomiswave.json",
       "platformName": "Atomiswave",
-      "platformShortname": "atomiswave",
+      "platformShortname": "_03 atomiswave",
       "platformUniqueId": "atomiswave",
       "revisionNumber": 8
     },
     {
-      "filename": "dreamcast.json",
+      "filename": "98 dreamcast.json",
       "platformName": "Deamcast",
-      "platformShortname": "dreamcast",
+      "platformShortname": "98 dreamcast",
       "platformUniqueId": "dreamcast",
       "revisionNumber": 8
     },
     {
-      "filename": "naomi.json",
+      "filename": "98 naomi.json",
       "platformName": "Naomi",
-      "platformShortname": "naomi",
+      "platformShortname": "98 naomi",
       "platformUniqueId": "naomi",
       "revisionNumber": 8
     },
     {
-      "filename": "gamegear.json",
+      "filename": "90 gamegear.json",
       "platformName": "Game Gear",
-      "platformShortname": "gamegear",
+      "platformShortname": "90 gamegear",
       "platformUniqueId": "gamegear",
       "revisionNumber": 8
     },
     {
-      "filename": "mastersystem.json",
+      "filename": "85 mastersystem.json",
       "platformName": "Master System",
-      "platformShortname": "mastersystem",
+      "platformShortname": "85 mastersystem",
       "platformUniqueId": "mastersystem",
       "revisionNumber": 8
     },
     {
-      "filename": "megacd.json",
+      "filename": "91 segacd.json",
       "platformName": "Mega CD",
-      "platformShortname": "megacd",
+      "platformShortname": "91 segacd",
       "platformUniqueId": "megacd",
       "revisionNumber": 8
     },
     {
-      "filename": "megadrive.json",
+      "filename": "88 genesis.json",
       "platformName": "Megadrive",
-      "platformShortname": "megadrive",
+      "platformShortname": "88 genesis",
       "platformUniqueId": "megadrive",
       "revisionNumber": 8
     },
     {
-      "filename": "32x.json",
+      "filename": "94 sega32x.json",
       "platformName": "32x",
-      "platformShortname": "32x",
+      "platformShortname": "94 sega32x",
       "platformUniqueId": "32x",
       "revisionNumber": 8
     },
     {
-      "filename": "saturn.json",
+      "filename": "94 saturn.json",
       "platformName": "Saturn",
-      "platformShortname": "saturn",
+      "platformShortname": "94 saturn",
       "platformUniqueId": "saturn",
       "revisionNumber": 8
     },
     {
-      "filename": "neogeocd.json",
+      "filename": "94 neogeocd.json",
       "platformName": "Neo Geo CD",
-      "platformShortname": "neogeocd",
+      "platformShortname": "94 neogeocd",
       "platformUniqueId": "neogeocd",
       "revisionNumber": 8
     },
@@ -163,37 +156,37 @@
       "revisionNumber": 8
     },
     {
-      "filename": "3do.json",
+      "filename": "93 3do.json",
       "platformName": "3DO",
-      "platformShortname": "3do",
+      "platformShortname": "93 3do",
       "platformUniqueId": "3do",
       "revisionNumber": 8
     },
     {
-      "filename": "psx.json",
+      "filename": "94 psx.json",
       "platformName": "PlayStation",
-      "platformShortname": "psx",
+      "platformShortname": "94 psx",
       "platformUniqueId": "psx",
       "revisionNumber": 8
     },
     {
-      "filename": "PS2.json",
+      "filename": "_00 ps2.json",
       "platformName": "PlayStation 2",
-      "platformShortname": "PS2",
+      "platformShortname": "_00 ps2",
       "platformUniqueId": "PS2",
       "revisionNumber": 8
     },
     {
-      "filename": "Wii.json",
+      "filename": "_07 wii.json",
       "platformName": "Wii",
-      "platformShortname": "Wii",
+      "platformShortname": "_07 wii",
       "platformUniqueId": "Wii",
       "revisionNumber": 8
     },
     {
-      "filename": "PSP.json",
+      "filename": "_05 psp.json",
       "platformName": "PSP",
-      "platformShortname": "PSP",
+      "platformShortname": "_05 psp",
       "platformUniqueId": "PSP",
       "revisionNumber": 8
     }

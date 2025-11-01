@@ -4,7 +4,7 @@
   "platform": {
     "name": "Sega Game Gear",
     "uniqueId": "gamegear",
-    "shortname": "gamegear",
+    "shortname": "90 gamegear",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [

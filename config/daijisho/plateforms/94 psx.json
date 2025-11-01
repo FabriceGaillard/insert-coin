@@ -4,7 +4,7 @@
   "platform": {
     "name": "Sony PlayStation",
     "uniqueId": "psx",
-    "shortname": "psx",
+    "shortname": "94 psx",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*(?<!bin)$",
     "scraperSourceList": [

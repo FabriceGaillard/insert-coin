@@ -4,7 +4,7 @@
   "platform": {
     "name": "Nintendo 64",
     "uniqueId": "n64",
-    "shortname": "n64",
+    "shortname": "96 n64",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [

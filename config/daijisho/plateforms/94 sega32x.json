@@ -4,7 +4,7 @@
   "platform": {
     "name": "Sega 32X",
     "uniqueId": "sega32x",
-    "shortname": "sega32x",
+    "shortname": "94 sega32x",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [
