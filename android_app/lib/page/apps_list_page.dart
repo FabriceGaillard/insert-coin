@@ -89,6 +89,16 @@ class _AppsListPageState extends State<AppsListPage> {
     );
   }
 
+  bool areAllAppsInstalled() {
+    for (final key in _itemKeys) {
+      final state = key.currentState;
+      if (state != null && (state._installed != true)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,7 +120,7 @@ class _AppsListPageState extends State<AppsListPage> {
             color: Colors.grey[850],
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             child: const Text(
-              "Ces app sont nécessaires pour le bon fonctionnement des jeux vidéo rétro. Elles seront toutes installées sur votre carte SD — vous n'avez pas à vous soucier de la place que prend chacune d'entre elles.",
+              "Ces app sont nécessaires pour le bon fonctionnement des jeux vidéo rétro. Elles seront toutes installées sur téléphone — Il faut prévoir 2Go.",
               style: TextStyle(color: Colors.white, fontSize: 14),
             ),
           ),
@@ -122,6 +132,30 @@ class _AppsListPageState extends State<AppsListPage> {
                 final app = apps[index];
                 return AppListItem(key: _itemKeys[index], app: app);
               },
+            ),
+          ),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: areAllAppsInstalled() ? () {} : null,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFA5C7FA),
+                    foregroundColor: const Color(0xFF052C5E),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 24,
+                    ),
+                    shape: const StadiumBorder(),
+                  ),
+                  child: const Text(
+                    'Suivant',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
             ),
           ),
         ],
