@@ -1,3 +1,17 @@
-# insert_coin
-
-A new Flutter project.
+Arcade (MAME)
+NEC - pc Engine / CD (Beetle PCE FAST)
+Nintendo - DS (melonDS)
+Nintendo - Game Boy Advance (mGBA)
+Nintendo - Game Boy / Color (SameBoy)
+Nintendo - GameCube / Wii (Dolphin)
+Nintendo - NES / Famicom (Mesen)
+Nintendo - SNES / SFC (Snes9x)
+Nintendo 64 (Mupen64Plus-Next GLES3)
+Sega - Dreamcast/Naomi (Flycast)
+Sega - MS/GG/MD/CD (Genesis Plus GX Wide)
+Sega - MS/GG/CD/32X (PicoDrive)
+Sega - Saturn (Beetle Saturn)
+SNK - Neo Geo CD (NeoCD)
+Sony - PlayStation (Beetle PSX HW)
+Sony - PlayStation Portable (PPSSPP)
+The 3DO Company - 3DO (Opera)
