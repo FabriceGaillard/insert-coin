@@ -1,5 +1,5 @@
-name: insert_coin
-description: 'A new Flutter project.'
+name: back_to_childhood
+description: 'Une application pour revivre nos souvenirs de jeux rétro.'
 publish_to: 'none'
 version: 0.1.0
 
@@ -10,10 +10,14 @@ dependencies:
   flutter:
     sdk: flutter
 
-  saf: ^1.0.4
   permission_handler: ^12.0.1
   url_launcher: ^6.3.2
   flutter_svg: ^2.0.9
+  saf: ^1.0.4
+
+# Spécifier que l'application est uniquement pour Android
+platforms:
+  android:
 
   # device_apps removed temporarily to avoid AGP namespace issue; re-add when fixed
 

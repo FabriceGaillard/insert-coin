@@ -13,9 +13,10 @@
         <package android:name="com.retroarch.aarch64" />
         <package android:name="com.magneticchen.daijishou" />
         <package android:name="org.dolphinemu.dolphinemu" />
+        <package android:name="xyz.aethersx2.android" />
     </queries>
     <application
-        android:label="insert_coin"
+        android:label="Back to childhood"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

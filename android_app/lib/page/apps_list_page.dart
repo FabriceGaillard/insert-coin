@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'dart:io' show Platform;
+import 'retroarch_init_page.dart';
 
 // MethodChannel name must match Android MainActivity
-const MethodChannel _appChannel = MethodChannel('insert_coin/app');
+const MethodChannel _appChannel = MethodChannel('back_to_childhood/app');
 
 class AppData {
   final String name;
@@ -24,6 +26,16 @@ class AppData {
 
 final List<AppData> apps = [
   AppData(
+    name: 'Daijishō',
+    links: [
+      'https://play.google.com/store/apps/details?id=com.magneticchen.daijishou',
+    ],
+    ids: ['com.magneticchen.daijishou'],
+    thumb: 'lib/assets/apps/daijisho.png',
+    description:
+        'Daijishō est un lanceur rétro qui vous permet de gérer vos bibliothèques de jeux rétro.',
+  ),
+  AppData(
     name: 'RetroArch',
     links: [
       'https://play.google.com/store/apps/details?id=com.retroarch',
@@ -35,15 +47,14 @@ final List<AppData> apps = [
         'RetroArch is a free and open-source, cross-platform frontend for emulators, game engines, video games, media players and other applications',
   ),
   AppData(
-    name: 'Daijishō',
-    links: [
-      'https://play.google.com/store/apps/details?id=com.magneticchen.daijishou',
-    ],
-    ids: ['com.magneticchen.daijishou'],
-    thumb: 'lib/assets/apps/daijisho.png',
+    name: 'AetherSX2',
+    links: ['https://aethersx2.me/download/'],
+    ids: ['xyz.aethersx2.android'],
+    thumb: 'lib/assets/apps/aether_sx2.png',
     description:
         'Daijishō est un lanceur rétro qui vous permet de gérer vos bibliothèques de jeux rétro.',
   ),
+
   AppData(
     name: 'Dolphin',
     links: [
@@ -69,6 +80,36 @@ class _AppsListPageState extends State<AppsListPage> {
     apps.length,
     (_) => GlobalKey<_AppListItemState>(),
   );
+
+  @override
+  void initState() {
+    super.initState();
+    _requestPermissions();
+  }
+
+  Future<void> _requestPermissions() async {
+    print('Vérification des permissions...');
+
+    // Vérifier et demander la permission de gestion du stockage externe
+    var status = await Permission.manageExternalStorage.status;
+    print('Status initial de MANAGE_EXTERNAL_STORAGE: $status');
+
+    if (!status.isGranted) {
+      print('Demande de la permission MANAGE_EXTERNAL_STORAGE...');
+      status = await Permission.manageExternalStorage.request();
+      print('Nouveau status de MANAGE_EXTERNAL_STORAGE: $status');
+    }
+
+    // Vérifier et demander la permission de stockage standard
+    var storageStatus = await Permission.storage.status;
+    print('Status initial de STORAGE: $storageStatus');
+
+    if (!storageStatus.isGranted) {
+      print('Demande de la permission STORAGE...');
+      storageStatus = await Permission.storage.request();
+      print('Nouveau status de STORAGE: $storageStatus');
+    }
+  }
 
   Future<void> _refreshAll() async {
     final messenger = ScaffoldMessenger.of(context);
@@ -137,22 +178,37 @@ class _AppsListPageState extends State<AppsListPage> {
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
-              child: SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: areAllAppsInstalled() ? () {} : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFA5C7FA),
-                    foregroundColor: const Color(0xFF052C5E),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 24,
+              child: Opacity(
+                opacity: areAllAppsInstalled() ? 1.0 : 0.5,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: areAllAppsInstalled()
+                        ? () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const RetroarchInitPage(),
+                              ),
+                            );
+                          }
+                        : null,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFA5C7FA),
+                      foregroundColor: const Color(0xFF052C5E),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 24,
+                      ),
+                      shape: const StadiumBorder(),
                     ),
-                    shape: const StadiumBorder(),
-                  ),
-                  child: const Text(
-                    'Suivant',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                    child: const Text(
+                      'Suivant',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
                 ),
               ),
