@@ -2,6 +2,27 @@
   "baseUri": "https://raw.githubusercontent.com/FabriceGaillard/insert-coin/refs/heads/main/config/daijisho/plateforms/",
   "platformList": [
     {
+      "filename": "85 nes.json",
+      "platformName": "Nintendo",
+      "platformShortname": "85 nes",
+      "platformUniqueId": "nes",
+      "revisionNumber": 8
+    },
+    {
+      "filename": "85 mastersystem.json",
+      "platformName": "Master System",
+      "platformShortname": "85 mastersystem",
+      "platformUniqueId": "mastersystem",
+      "revisionNumber": 8
+    },
+    {
+      "filename": "88 genesis.json",
+      "platformName": "Megadrive",
+      "platformShortname": "88 genesis",
+      "platformUniqueId": "megadrive",
+      "revisionNumber": 8
+    },
+    {
       "filename": "89 tg16.json",
       "platformName": "PC Engine",
       "platformShortname": "89 tg16",
@@ -23,46 +44,11 @@
       "revisionNumber": 8
     },
     {
-      "filename": "98 gbc.json",
-      "platformName": "Game Boy Color",
-      "platformShortname": "98 gbc",
-      "platformUniqueId": "gbc",
+      "filename": "90 gamegear.json",
+      "platformName": "Game Gear",
+      "platformShortname": "90 gamegear",
+      "platformUniqueId": "gamegear",
       "revisionNumber": 8
-    },
-    {
-      "filename": "_01 gba.json",
-      "platformName": "Game Boy Advance",
-      "platformShortname": "_01 gba",
-      "platformUniqueId": "gba",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "_01 gc.json",
-      "platformName": "GameCube",
-      "platformShortname": "_01 gc",
-      "platformUniqueId": "gamecube",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "85 nes.json",
-      "platformName": "Nintendo",
-      "platformShortname": "85 nes",
-      "platformUniqueId": "nes",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "96 n64.json",
-      "platformName": "Nintendo 64",
-      "platformShortname": "96 n64",
-      "platformUniqueId": "n64",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "97 mame.json",
-      "platformName": "Arcade (MAME)",
-      "platformShortname": "97 mame",
-      "platformUniqueId": "mame",
-      "revisionNumber": 7
     },
     {
       "filename": "90 snes.json",
@@ -72,52 +58,10 @@
       "revisionNumber": 8
     },
     {
-      "filename": "_03 atomiswave.json",
-      "platformName": "Atomiswave",
-      "platformShortname": "_03 atomiswave",
-      "platformUniqueId": "atomiswave",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "98 dreamcast.json",
-      "platformName": "Deamcast",
-      "platformShortname": "98 dreamcast",
-      "platformUniqueId": "dreamcast",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "98 naomi.json",
-      "platformName": "Naomi",
-      "platformShortname": "98 naomi",
-      "platformUniqueId": "naomi",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "90 gamegear.json",
-      "platformName": "Game Gear",
-      "platformShortname": "90 gamegear",
-      "platformUniqueId": "gamegear",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "85 mastersystem.json",
-      "platformName": "Master System",
-      "platformShortname": "85 mastersystem",
-      "platformUniqueId": "mastersystem",
-      "revisionNumber": 8
-    },
-    {
       "filename": "91 segacd.json",
       "platformName": "Mega CD",
       "platformShortname": "91 segacd",
       "platformUniqueId": "megacd",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "88 genesis.json",
-      "platformName": "Megadrive",
-      "platformShortname": "88 genesis",
-      "platformUniqueId": "megadrive",
       "revisionNumber": 8
     },
     {
@@ -142,12 +86,41 @@
       "revisionNumber": 8
     },
     {
-      "filename": "arcade.json",
-      "platformName": "Arcade",
-      "platformShortname": "arcade",
-      "platformUniqueId": "arcade",
+      "filename": "96 n64.json",
+      "platformName": "Nintendo 64",
+      "platformShortname": "96 n64",
+      "platformUniqueId": "n64",
       "revisionNumber": 8
     },
+    {
+      "filename": "97 mame.json",
+      "platformName": "Arcade (MAME)",
+      "platformShortname": "97 mame",
+      "platformUniqueId": "mame",
+      "revisionNumber": 7
+    },
+    {
+      "filename": "98 gbc.json",
+      "platformName": "Game Boy Color",
+      "platformShortname": "98 gbc",
+      "platformUniqueId": "gbc",
+      "revisionNumber": 8
+    },
+    {
+      "filename": "98 dreamcast.json",
+      "platformName": "Deamcast",
+      "platformShortname": "98 dreamcast",
+      "platformUniqueId": "dreamcast",
+      "revisionNumber": 8
+    },
+    {
+      "filename": "98 naomi.json",
+      "platformName": "Naomi",
+      "platformShortname": "98 naomi",
+      "platformUniqueId": "naomi",
+      "revisionNumber": 8
+    },
+
     {
       "filename": "93 3do.json",
       "platformName": "3DO",
@@ -170,10 +143,25 @@
       "revisionNumber": 8
     },
     {
-      "filename": "_07 wii.json",
-      "platformName": "Wii",
-      "platformShortname": "_07 wii",
-      "platformUniqueId": "Wii",
+      "filename": "_01 gba.json",
+      "platformName": "Game Boy Advance",
+      "platformShortname": "_01 gba",
+      "platformUniqueId": "gba",
+      "revisionNumber": 8
+    },
+    {
+      "filename": "_01 gc.json",
+      "platformName": "GameCube",
+      "platformShortname": "_01 gc",
+      "platformUniqueId": "gamecube",
+      "revisionNumber": 8
+    },
+
+    {
+      "filename": "_03 atomiswave.json",
+      "platformName": "Atomiswave",
+      "platformShortname": "_03 atomiswave",
+      "platformUniqueId": "atomiswave",
       "revisionNumber": 8
     },
     {
@@ -181,6 +169,13 @@
       "platformName": "PSP",
       "platformShortname": "_05 psp",
       "platformUniqueId": "PSP",
+      "revisionNumber": 8
+    },
+    {
+      "filename": "_07 wii.json",
+      "platformName": "Wii",
+      "platformShortname": "_07 wii",
+      "platformUniqueId": "Wii",
       "revisionNumber": 8
     }
   ]
