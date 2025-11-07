@@ -4,7 +4,7 @@
   "platform": {
     "name": "Arcade (MAME)",
     "uniqueId": "mame",
-    "shortname": "97 MAME",
+    "shortname": "97 mame",
     "description": null,
     "acceptedFilenameRegex": "^(?!(?:\\._|\\.).*).*$",
     "scraperSourceList": [
