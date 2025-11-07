@@ -65,6 +65,20 @@
       "revisionNumber": 8
     },
     {
+      "filename": "93 3do.json",
+      "platformName": "3DO",
+      "platformShortname": "93 3do",
+      "platformUniqueId": "3do",
+      "revisionNumber": 8
+    },
+    {
+      "filename": "94 psx.json",
+      "platformName": "PlayStation",
+      "platformShortname": "94 psx",
+      "platformUniqueId": "psx",
+      "revisionNumber": 8
+    },
+    {
       "filename": "94 sega32x.json",
       "platformName": "32x",
       "platformShortname": "94 sega32x",
@@ -97,7 +111,7 @@
       "platformName": "Arcade (MAME)",
       "platformShortname": "97 mame",
       "platformUniqueId": "mame",
-      "revisionNumber": 7
+      "revisionNumber": 8
     },
     {
       "filename": "98 gbc.json",
@@ -118,21 +132,6 @@
       "platformName": "Naomi",
       "platformShortname": "98 naomi",
       "platformUniqueId": "naomi",
-      "revisionNumber": 8
-    },
-
-    {
-      "filename": "93 3do.json",
-      "platformName": "3DO",
-      "platformShortname": "93 3do",
-      "platformUniqueId": "3do",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "94 psx.json",
-      "platformName": "PlayStation",
-      "platformShortname": "94 psx",
-      "platformUniqueId": "psx",
       "revisionNumber": 8
     },
     {
