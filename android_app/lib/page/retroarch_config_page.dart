@@ -37,174 +37,96 @@ class _RetroarchConfigPageState extends State<RetroarchConfigPage> {
       // Note: ne pas purger automatiquement les permissions persistées ici
       // car cela peut supprimer une URI valide avant d'en obtenir une nouvelle.
 
-      // 1) Ouvrir le picker SAF (dynamique)
-      final bool? granted = await Saf.getDynamicDirectoryPermission();
+      // Utiliser directement le picker natif (DocumentsUI / Files by Google)
+      // pour obtenir un flux en une seule étape (permission + éventuelle copie native).
+      _addLog('Launching native DocumentsUI picker via MethodChannel');
+      final fallbackUri = await _openDocsUIDocumentTree();
       if (!mounted) return;
-      _addLog('Saf.getDynamicDirectoryPermission => $granted');
-
-      if (granted != true) {
-        setState(() => _status = 'Aucun dossier sélectionné');
+      _addLog('DocsUI picker returned: $fallbackUri');
+      if (fallbackUri == null) {
+        setState(() {
+          _sourceTreeUri = null;
+          _sourcePath = null;
+          _status = 'Aucun dossier sélectionné';
+        });
         return;
       }
 
-      // 2) Récupérer la liste des URIs persistées
-      List<String>? dirs;
-      try {
-        dirs = await Saf.getPersistedPermissionDirectories();
-        _addLog(
-          'Saf.getPersistedPermissionDirectories => ${dirs?.length ?? 0} entries: ${dirs ?? 'null'}',
-        );
-      } catch (e) {
-        dirs = null;
-        _addLog('Exception getPersistedPermissionDirectories: $e');
-      }
-      if (!mounted) return;
-
-      if (dirs == null || dirs.isEmpty) {
-        // Tentative de fallback : forcer l'ouverture du picker "Files by Google"
-        // via un MethodChannel natif (MainActivity) qui lance ACTION_OPEN_DOCUMENT_TREE
-        final fallbackUri = await _openDocsUIDocumentTree();
-        if (!mounted) return;
-        _addLog('Fallback picker returned URI: $fallbackUri');
-        if (fallbackUri != null) {
-          // If the native fallback returned a local cache path (copied by native code),
-          // prefer using that directly instead of trying to use SAF.sync().
-          if (fallbackUri.startsWith('/')) {
-            // local absolute path returned by native copy
-            if (mounted) {
-              setState(() {
-                _sourceTreeUri = fallbackUri;
-                _sourcePath = fallbackUri;
-                if (fallbackUri.contains('/RetroArch')) {
-                  _nativeCopiedToRetro = true;
-                  _status =
-                      'Copie terminée : fichiers présents dans RetroArch ($fallbackUri)';
-                } else {
-                  _status =
-                      'Fichiers copiés dans le cache natif : $fallbackUri';
-                }
-              });
+      // Si le natif a renvoyé un chemin local (copie effectuée coté natif), l'utiliser directement
+      if (fallbackUri.startsWith('/')) {
+        if (mounted) {
+          setState(() {
+            _sourceTreeUri = fallbackUri;
+            _sourcePath = fallbackUri;
+            if (fallbackUri.contains('/RetroArch')) {
+              _nativeCopiedToRetro = true;
+              _status =
+                  'Copie terminée : fichiers présents dans RetroArch ($fallbackUri)';
+            } else {
+              _status = 'Fichiers copiés dans le cache natif : $fallbackUri';
             }
-            _addLog(
-              'Native picker returned local cache path, using it as source: $fallbackUri',
-            );
-            return;
-          }
-
-          // sinon, traiter comme une URI SAF/content et tenter un sync
-          // tenter de synchroniser directement sur l'URI retournée
-          final normalizedUri = normalizeTreeUri(fallbackUri);
-          if (mounted)
-            setState(() => _status = 'Normalized URI: $normalizedUri');
-          _addLog('Normalized URI: $normalizedUri');
-          final safDir = Saf(normalizedUri);
-          bool? syncedFallback;
-          try {
-            _addLog('Calling saf.sync() on normalized URI');
-            syncedFallback = await safDir.sync();
-            _addLog('saf.sync() returned: $syncedFallback');
-          } catch (e) {
-            _addLog(
-              'Exception during safDir.sync() for fallbackUri=$fallbackUri : $e',
-            );
-            if (!mounted) return;
-            setState(() {
-              _sourceTreeUri = null;
-              _sourcePath = null;
-              _status =
-                  'Impossible de synchroniser le dossier sélectionné (fallback) : $e';
-            });
-            return;
-          }
-          if (!mounted) return;
-          if (syncedFallback == true) {
-            setState(() {
-              _sourceTreeUri = fallbackUri;
-              _sourcePath = fallbackUri;
-              _status =
-                  'Dossier synchronisé et prêt pour la copie (via DocsUI)';
-            });
-            _addLog('Fallback sync successful, sourceTreeUri set');
-            return;
-          } else {
-            // si sync retourne false, essayer de lister les persisted dirs pour mieux diagnostiquer
-            List<String>? postDirs;
-            try {
-              postDirs = await Saf.getPersistedPermissionDirectories();
-            } catch (e) {
-              postDirs = null;
-            }
-            _addLog('Post-pick persisted dirs: ${postDirs ?? 'null'}');
-            setState(() {
-              _sourceTreeUri = null;
-              _sourcePath = null;
-              _status =
-                  'Impossible de synchroniser le dossier sélectionné (fallback). URI: $fallbackUri\nPersisted dirs post-pick: ${postDirs ?? 'null'}';
-            });
-            _addLog(
-              'Fallback sync returned false; updated UI status with persisted dirs',
-            );
-            return;
-          }
+          });
         }
-
-        setState(() {
-          _sourceTreeUri = null;
-          _sourcePath = null;
-          _status = 'Impossible de récupérer le dossier sélectionné';
-        });
-        return;
-      }
-
-      // 3) Sélectionne prudemment l’index 0 (certains bugs apparaissent avec .last)
-      //    et vérifie qu’il y a bien au moins 1 élément
-      final String selectedTreeUri = dirs[0];
-
-      // 4) Vérifier que cette URI est bien persistée (sécurité)
-      bool isPersisted = false;
-      try {
-        isPersisted =
-            (await Saf.isPersistedPermissionDirectoryFor(selectedTreeUri)) ==
-            true;
         _addLog(
-          'Saf.isPersistedPermissionDirectoryFor($selectedTreeUri) => $isPersisted',
+          'Native picker returned local cache path, using it as source: $fallbackUri',
         );
-      } catch (e) {
-        isPersisted =
-            true; // certains firmwares renvoient une erreur alors que c’est OK
-        _addLog('Exception isPersistedPermissionDirectoryFor: $e');
+        return;
       }
-      if (!mounted) return;
 
-      if (!isPersisted) {
+      // Sinon traiter la valeur retournée comme une URI SAF/content et tenter un sync via le plugin SAF
+      final normalizedUri = normalizeTreeUri(fallbackUri);
+      if (mounted) setState(() => _status = 'Normalized URI: $normalizedUri');
+      _addLog('Normalized URI: $normalizedUri');
+      final safDir = Saf(normalizedUri);
+      bool? syncedFallback;
+      try {
+        _addLog('Calling saf.sync() on normalized URI');
+        syncedFallback = await safDir.sync();
+        _addLog('saf.sync() returned: $syncedFallback');
+      } catch (e) {
+        _addLog(
+          'Exception during safDir.sync() for fallbackUri=$fallbackUri : $e',
+        );
+        if (!mounted) return;
         setState(() {
           _sourceTreeUri = null;
           _sourcePath = null;
-          _status = 'Le dossier n’a pas été correctement persisté';
+          _status =
+              'Impossible de synchroniser le dossier sélectionné (fallback) : $e';
         });
         return;
       }
-
-      // 5) Sync le cache local sur CETTE URI
-      final safDir = Saf(selectedTreeUri);
-      _addLog('Calling saf.sync() on selectedTreeUri');
-      final bool? synced = await safDir.sync();
-      _addLog('saf.sync() on selectedTreeUri returned: $synced');
       if (!mounted) return;
-
-      if (synced != true) {
-        setState(
-          () => _status = 'Impossible de synchroniser le dossier sélectionné',
+      if (syncedFallback == true) {
+        setState(() {
+          _sourceTreeUri = fallbackUri;
+          _sourcePath = fallbackUri;
+          _status = 'Dossier synchronisé et prêt pour la copie (via DocsUI)';
+        });
+        _addLog('Fallback sync successful, sourceTreeUri set');
+        return;
+      } else {
+        List<String>? postDirs;
+        try {
+          postDirs = await Saf.getPersistedPermissionDirectories();
+        } catch (e) {
+          postDirs = null;
+        }
+        _addLog('Post-pick persisted dirs: ${postDirs ?? 'null'}');
+        setState(() {
+          _sourceTreeUri = null;
+          _sourcePath = null;
+          _status =
+              'Impossible de synchroniser le dossier sélectionné (fallback). URI: $fallbackUri\nPersisted dirs post-pick: ${postDirs ?? 'null'}';
+        });
+        _addLog(
+          'Fallback sync returned false; updated UI status with persisted dirs',
         );
         return;
       }
 
-      // 6) OK : maj de l’état
-      setState(() {
-        _sourceTreeUri = selectedTreeUri; // content://...
-        _sourcePath = selectedTreeUri; // affichage
-        _status = 'Dossier synchronisé et prêt pour la copie';
-      });
+      // (Ancien flux SAF basé sur persisted permissions supprimé :
+      // nous utilisons désormais le picker natif en une étape.)
     } catch (e) {
       if (!mounted) return;
       setState(() => _status = 'Erreur lors de la sélection : $e');
