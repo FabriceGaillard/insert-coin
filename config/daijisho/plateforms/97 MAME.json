@@ -1,6 +1,6 @@
 {
   "databaseVersion": 14,
-  "revisionNumber": 7,
+  "revisionNumber": 12,
   "platform": {
     "name": "Arcade (MAME)",
     "uniqueId": "mame",
