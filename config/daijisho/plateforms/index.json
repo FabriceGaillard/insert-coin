@@ -2,20 +2,6 @@
   "baseUri": "https://raw.githubusercontent.com/FabriceGaillard/insert-coin/refs/heads/main/config/daijisho/plateforms/",
   "platformList": [
     {
-      "filename": "model2.json",
-      "platformName": "Model 2",
-      "platformShortname": "model2",
-      "platformUniqueId": "model2",
-      "revisionNumber": 8
-    },
-    {
-      "filename": "model3.json",
-      "platformName": "Model 3",
-      "platformShortname": "model3",
-      "platformUniqueId": "model3",
-      "revisionNumber": 8
-    },
-    {
       "filename": "89 tg16.json",
       "platformName": "PC Engine",
       "platformShortname": "89 tg16",
@@ -70,6 +56,13 @@
       "platformShortname": "96 n64",
       "platformUniqueId": "n64",
       "revisionNumber": 8
+    },
+    {
+      "filename": "97 mame.json",
+      "platformName": "Arcade (MAME)",
+      "platformShortname": "97 mame",
+      "platformUniqueId": "mame",
+      "revisionNumber": 7
     },
     {
       "filename": "90 snes.json",
