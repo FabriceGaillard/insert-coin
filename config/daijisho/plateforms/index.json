@@ -128,13 +128,6 @@
       "revisionNumber": 8
     },
     {
-      "filename": "98 naomi.json",
-      "platformName": "Naomi",
-      "platformShortname": "98 naomi",
-      "platformUniqueId": "naomi",
-      "revisionNumber": 8
-    },
-    {
       "filename": "_00 ps2.json",
       "platformName": "PlayStation 2",
       "platformShortname": "_00 ps2",
@@ -153,14 +146,6 @@
       "platformName": "GameCube",
       "platformShortname": "_01 gc",
       "platformUniqueId": "gamecube",
-      "revisionNumber": 8
-    },
-
-    {
-      "filename": "_03 atomiswave.json",
-      "platformName": "Atomiswave",
-      "platformShortname": "_03 atomiswave",
-      "platformUniqueId": "atomiswave",
       "revisionNumber": 8
     },
     {
