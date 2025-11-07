@@ -1,12 +1,15 @@
 buildscript {
-    ext.kotlin_version = "1.8.10"
+    // Upgrade Kotlin to a version that supports newer JDKs (e.g. JDK 25)
+    // Note: bumping Kotlin may require corresponding Gradle/AGP updates if incompatibilities appear.
+    ext.kotlin_version = "2.1.0"
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:7.3.0"
+        // Upgrade AGP to recent version compatible with newer Kotlin and Gradle
+        classpath "com.android.tools.build:gradle:8.3.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }

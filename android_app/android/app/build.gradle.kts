@@ -42,3 +42,8 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    // DocumentFile (AndroidX) used by MainActivity for SAF traversal/copy
+    implementation("androidx.documentfile:documentfile:1.1.0")
+}
