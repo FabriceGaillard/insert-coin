@@ -30,13 +30,6 @@
       "revisionNumber": 8
     },
     {
-      "filename": "89 tgcd.json",
-      "platformName": "PC Engine CD",
-      "platformShortname": "89 tgcd",
-      "platformUniqueId": "pcenginecd",
-      "revisionNumber": 8
-    },
-    {
       "filename": "89 gb.json",
       "platformName": "Game Boy",
       "platformShortname": "89 gb",
