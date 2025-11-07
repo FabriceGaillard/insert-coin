@@ -140,7 +140,22 @@ class MainActivity : FlutterActivity() {
                             val outBase: File? = getExternalFilesDir("saf_cache") ?: filesDir
                             outBase?.let { base ->
                                 if (!base.exists()) base.mkdirs()
-                                val sub = File(base, "from_saf")
+                                // Nettoyer d'anciens caches nommés from_saf* pour éviter de mélanger des fichiers
+                                try {
+                                    base.listFiles()?.filter { it.isDirectory && it.name.startsWith("from_saf") }?.forEach {
+                                        try {
+                                            it.deleteRecursively()
+                                            Log.d("MainActivity", "Deleted old cache folder: ${it.absolutePath}")
+                                        } catch (delEx: Exception) {
+                                            Log.w("MainActivity", "Failed to delete old cache ${it.absolutePath}", delEx)
+                                        }
+                                    }
+                                } catch (e: Exception) {
+                                    Log.w("MainActivity", "Error during old cache cleanup", e)
+                                }
+
+                                // Créer un cache unique pour cette sélection pour éviter les collisions
+                                val sub = File(base, "from_saf_${System.currentTimeMillis()}")
                                 if (!sub.exists()) sub.mkdirs()
                                 copiedCachePath = sub.absolutePath
 
@@ -182,30 +197,39 @@ class MainActivity : FlutterActivity() {
                                                 copyDoc(c, sub)
                                             }
 
-                                            // Tentative: copier directement dans /storage/emulated/0/RetroArch
-                                            // si possible (meilleure expérience "one-step").
+                                            // Tentative: copier récursivement le dossier copié dans le cache
+                                            // vers /storage/emulated/0/RetroArch/system en préservant la structure.
                                             try {
-                                                val externalRetro = File("/storage/emulated/0/RetroArch")
-                                                if (!externalRetro.exists()) externalRetro.mkdirs()
-                                                for (p in copiedFiles) {
-                                                    try {
-                                                        val src = File(p)
-                                                        if (src.exists()) {
-                                                            val dest = File(externalRetro, src.name)
+                                                val externalRetroRoot = File("/storage/emulated/0/RetroArch")
+                                                val externalSystemDir = File(externalRetroRoot, "system")
+                                                if (!externalSystemDir.exists()) externalSystemDir.mkdirs()
+
+                                                fun copyDirRecursive(src: File, dest: File) {
+                                                    if (src.isDirectory) {
+                                                        if (!dest.exists()) dest.mkdirs()
+                                                        val children = src.listFiles()
+                                                        if (children != null) {
+                                                            for (child in children) {
+                                                                copyDirRecursive(child, File(dest, child.name))
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
                                                             src.copyTo(dest, overwrite = true)
                                                             copiedToRetro = true
+                                                        } catch (e: Exception) {
+                                                            Log.w("MainActivity", "Failed to copy file ${src.absolutePath} to ${dest.absolutePath}", e)
                                                         }
-                                                    } catch (ex: Exception) {
-                                                        Log.w("MainActivity", "Failed to copy to RetroArch for file $p", ex)
-                                                        // continuer
                                                     }
                                                 }
+
+                                                // Copier le dossier 'sub' (cache from_saf) vers RetroArch/system
+                                                copyDirRecursive(sub, externalSystemDir)
                                                 if (copiedToRetro) {
-                                                    // Remember the path to include in the response
-                                                    retroarchPath = externalRetro.absolutePath
+                                                    retroarchPath = externalSystemDir.absolutePath
                                                 }
                                             } catch (ex: Exception) {
-                                                Log.w("MainActivity", "Failed to copy tree to RetroArch", ex)
+                                                Log.w("MainActivity", "Failed to copy tree to RetroArch/system", ex)
                                             }
                                         }
                             }

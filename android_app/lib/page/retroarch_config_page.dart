@@ -474,24 +474,6 @@ class _RetroarchConfigPageState extends State<RetroarchConfigPage> {
                     label: const Text('Sélectionner le dossier source'),
                   ),
                   const SizedBox(height: 16),
-                  ElevatedButton.icon(
-                    onPressed:
-                        (_sourcePath != null &&
-                            !_isCopying &&
-                            !_nativeCopiedToRetro)
-                        ? _copyFiles
-                        : null,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 16,
-                      ),
-                    ),
-                    icon: const Icon(Icons.copy),
-                    label: const Text('Copier vers RetroArch'),
-                  ),
                   if (_status.isNotEmpty) ...[
                     const SizedBox(height: 24),
                     Card(
