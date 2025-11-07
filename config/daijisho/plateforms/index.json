@@ -100,13 +100,6 @@
       "revisionNumber": 8
     },
     {
-      "filename": "97 MAME.json",
-      "platformName": "Arcade (MAME)",
-      "platformShortname": "97 mame",
-      "platformUniqueId": "mame",
-      "revisionNumber": 8
-    },
-    {
       "filename": "98 gbc.json",
       "platformName": "Game Boy Color",
       "platformShortname": "98 gbc",
